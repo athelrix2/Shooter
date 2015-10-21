@@ -44,11 +44,11 @@ public class Polygons extends JPanel {
 	        int key = e.getKeyCode();
 
 	        if (key == KeyEvent.VK_LEFT) {
-	            //deltaX = 0;
+	            deltaX = 0;
 	        }
 
 	        if (key == KeyEvent.VK_RIGHT) {
-	        	//deltaX = 0;
+	        	deltaX = 0;
 	        }
 
 	        if (key == KeyEvent.VK_UP) {
@@ -57,6 +57,10 @@ public class Polygons extends JPanel {
 
 	        if (key == KeyEvent.VK_DOWN) {
 	        	//deltaX = 0;
+	        }
+	        if (key == KeyEvent.VK_X);
+	        {
+	        	
 	        }
 	    }
 }
