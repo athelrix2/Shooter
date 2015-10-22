@@ -6,7 +6,7 @@ import javax.swing.*;
 public class Polygons extends JPanel {
 	
 	private Rectangle body=new Rectangle();
-	private int deltaX=0,x=0;
+	private int x=0;
 	public Polygons()
 	{
 		body.setBounds(0, 250, 50, 100);
@@ -22,45 +22,13 @@ public class Polygons extends JPanel {
 		g2.fill(body);
 		g2.draw(body);
 	}
-	public void updateBodyLocation()
+	public void updateBodyLocation(int deltaX)
 	{
 		body.setLocation(x+=deltaX, 250);
+		repaint();
 	}
-	 public void keyPressed(KeyEvent e)
-	 {
-
-		 int key = e.getKeyCode();
-		 if (key == 37)
-	     {
-			 deltaX = -2;
-	     }
-	     if (key == 39)
-	     {
-	    	 deltaX = 2;
-	     }
-	 }
-	 public void keyReleased(KeyEvent e) {
-	        
-	        int key = e.getKeyCode();
-
-	        if (key == KeyEvent.VK_LEFT) {
-	            deltaX = 0;
-	        }
-
-	        if (key == KeyEvent.VK_RIGHT) {
-	        	deltaX = 0;
-	        }
-
-	        if (key == KeyEvent.VK_UP) {
-	        	//deltaX = 0;
-	        }
-
-	        if (key == KeyEvent.VK_DOWN) {
-	        	//deltaX = 0;
-	        }
-	        if (key == KeyEvent.VK_X);
-	        {
-	        	
-	        }
-	    }
+	public int getX()
+	{
+		return x;
+	}
 }
