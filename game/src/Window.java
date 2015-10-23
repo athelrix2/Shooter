@@ -11,9 +11,6 @@ public class Window extends JFrame{
 		this.setSize(500, 500);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.add(movement.getShapes());
-		for(Bullet bullet:movement.getBullet()){
-			this.add(bullet);
-		}
 	}
 	private class Logger extends KeyAdapter{
 		  @Override
@@ -29,3 +26,5 @@ public class Window extends JFrame{
 	      }
 	}
 }
+
+	        	  
