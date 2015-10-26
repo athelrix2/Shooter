@@ -9,7 +9,7 @@ public class Polygons extends JPanel {
 	private Rectangle body=new Rectangle();
 	private ArrayList<Rectangle> bullets=new ArrayList<Rectangle>();
 	private ArrayList<Integer> loc=new ArrayList<Integer>();
-	private int x=0;
+	private int x=0,y=this.getHeight()-200;
 	public Polygons()
 	{
 		body.setBounds(0, 250, 50, 100);
@@ -18,9 +18,10 @@ public class Polygons extends JPanel {
 	{
 		super.paintComponent(g);
 		g.setColor(Color.GREEN);
-		g.fillRect(0, 350, 500, 100);
+		g.fillRect(0, this.getHeight()-100, this.getWidth(), 100);
 		g.setColor(Color.RED);
 		Graphics2D g2 = (Graphics2D) g;
+		body.setLocation(x,this.getHeight()-200);
 		g2.fill(body);
 		g2.draw(body);
 		g2.setColor(Color.BLUE);
@@ -28,6 +29,7 @@ public class Polygons extends JPanel {
 			g2.fill(bullet);
 			g2.draw(bullet);
 		}
+		y=this.getHeight()-200;
 	}
 	public void updateBodyLocation(int deltaX)
 	{
@@ -47,16 +49,16 @@ public class Polygons extends JPanel {
 				bullets.add(rec);
 				int xBul=x;
 				int orgin=x;
-				bullets.get(bullets.indexOf(rec)).setBounds(x, 250, 20, 10);
-				while(Math.abs(xBul-orgin)<=500){
+				bullets.get(bullets.indexOf(rec)).setBounds(x, y, 20, 10);
+				while(Math.abs(xBul-orgin)<=800){
 					if(right)
 						xBul++;
 					else
 						xBul--;
-					bullets.get(bullets.indexOf(rec)).setLocation(xBul,250);
+					bullets.get(bullets.indexOf(rec)).setLocation(xBul,y);
 					repaint();
 					try {
-						sleep(5);
+						sleep(1);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

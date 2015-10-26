@@ -11,12 +11,12 @@ public class KeyLogger {
 		 int key = e.getKeyCode();
 		 if (key == 37)
 	     {
-			 shapes.updateBodyLocation(-2);
+			 shapes.updateBodyLocation(-4);
 			 pressedRight=false;
 	     }
 		 else if (key == 39)
 	     {
-	    	 shapes.updateBodyLocation(2);
+	    	 shapes.updateBodyLocation(4);
 	    	 pressedRight=true;
 	     }
 		 else if (key == 88)
