@@ -1,7 +1,3 @@
-/KeyLogger.class
-/Bullet$1.class
-/Bullet.class
-/Logger.class
-/Window$Logger.class
-/BulletThread.class
-/Polygons$1.class
+/Body.class
+/SpriteLoader.class
+/SpriteLoader$SpriteSheetLoader.class

@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
@@ -7,13 +8,19 @@ import javax.swing.JFrame;
 
 public class Window extends JFrame{
 	private KeyLogger movement=new KeyLogger();
+	public static void main(String args[])
+	{
+		new Window();
+	}
 	public Window()
 	{
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		addKeyListener(new Logger());
-		this.setSize((int)screenSize.getWidth(), (int)screenSize.getHeight());
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.add(movement.getShapes());
+		setSize(500, 500);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		Polygons poly=movement.getShapes();
+		add(poly);
+		pack();
+		this.setVisible(true);
 	}
 	private class Logger extends KeyAdapter{
 		  @Override

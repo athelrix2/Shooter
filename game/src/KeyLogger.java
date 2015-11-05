@@ -1,9 +1,6 @@
-import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 
 public class KeyLogger {
-	private Polygons shapes=new Polygons();
 	private Boolean pressedRight=false;
 	public void keyPressed(KeyEvent e)
 	 {
@@ -11,18 +8,19 @@ public class KeyLogger {
 		 int key = e.getKeyCode();
 		 if (key == 37)
 	     {
-			 shapes.updateBodyLocation(-4);
+			 shapes.updateBodyLocation(-10);
 			 pressedRight=false;
 	     }
 		 else if (key == 39)
 	     {
-	    	 shapes.updateBodyLocation(4);
+	    	 shapes.updateBodyLocation(10);
 	    	 pressedRight=true;
+	    	 System.out.println(shapes.getX());
 	     }
 		 else if (key == 88)
 	     {
-	    	 shapes.createThread(pressedRight);
-	    	 System.out.println(key);
+	    	 
+	    	 
 	     }	
 	 }
 	 public void keyReleased(KeyEvent e) {
